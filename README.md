@@ -12,11 +12,23 @@ A Node.js script that allows users to generate cowsays and save them to their fi
 
 ---
 
+## Learning Objectives
+
+* Processing and using CLI arguments with `process.argv`
+* Writing to the file system
+* Structuring and using CLI apps
+* Reverse-engineering
+* Using NPM packages (piuccio/cowsay: [NPM](https://www.npmjs.com/package/cowsay), [GitHub](https://github.com/piuccio/cowsay))
+  * Reading documentation
+  * Building projects around modules
+
+---
+
 ## Running the Demo
 
 This repo comes with a fully-functioning (but unreadable!) demo.  Play with this demo for a while to make sure you understand how your `cowsaydex` should behave.
 
-* run `node demo.min.js -h` or `node demo.min.js --help`
+* `node demo.min.js -h`
 
 ---
 

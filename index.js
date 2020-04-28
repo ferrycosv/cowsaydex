@@ -91,7 +91,7 @@ if (!SUPPORTED_VERBS.includes(userConfig.verb)) {
 
 const finalConfig = Object.assign({}, DEFAULT_CONFIG, userConfig)
 
-const thisCow = cowsay[finalConfig.verb](defaultConfig)
+const thisCow = cowsay[finalConfig.verb](finalConfig)
 
 console.log(thisCow)
 
