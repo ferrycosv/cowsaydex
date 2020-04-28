@@ -1,0 +1,14 @@
+{
+  "name": "cowsaydex",
+  "version": "1.0.0",
+  "description": "like a pokedex, but for cowsays",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cowsay": "^1.4.0"
+  }
+}
