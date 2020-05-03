@@ -75,7 +75,7 @@ if (userArgs.includes('-l')) {
 const userConfig = _
 /* example:
 user arguments ...
-  [ "text:cows be like : moooooo", "file:readme.txt" ]
+  [ "text=cows be like : moooooo", "file=readme.txt" ]
 
 become ...
   {
