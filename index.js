@@ -49,7 +49,7 @@ if either flag is passed as an argument, no cowsay will be generated`
 // --- process user input ---
 
 // create an array containing only the user-provided CLI arguments
-const userArgs = _
+const userArgs = process.argv.slice(2);
 
 
 // --- handle tech support ---
@@ -72,7 +72,11 @@ if (userArgs.includes('-l')) {
 // --- generate cowsay ---
 
 // parse the CLI arguments from the user into a config object
-const userConfig = _
+const userConfig = userArgs.reduce((acc,curr) => {
+  const arg = curr.split("=");
+  acc[arg[0]] = arg[1];
+  return acc;
+}, {});
 /* example:
 user arguments ...
   [ "text=cows be like : moooooo", "file=readme.txt" ]
@@ -92,10 +96,10 @@ if (!SUPPORTED_VERBS.includes(userConfig.verb)) {
 const finalConfig = Object.assign({}, DEFAULT_CONFIG, userConfig)
 
 const thisCow = cowsay[finalConfig.verb]({
-  text: _,
-  e: _,
-  T: _,
-  f: _,
+  text: finalConfig.text,
+  e: finalConfig.e,
+  T: finalConfig.T,
+  f: finalConfig.f,
 })
 
 console.log(thisCow)
@@ -111,7 +115,7 @@ try {
 }
 
 // write thisCow to a new file using COWSAID_DIRNAME and finalConfig.file
-fs._
+fs.writeFileSync(`./${COWSAID_DIRNAME}/${finalConfig.file}`,thisCow,"utf-8");
 
 
 // ----- end main program script -----
